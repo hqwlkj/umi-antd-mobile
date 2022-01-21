@@ -22,7 +22,7 @@ $ yarn start
 ```
 ## 预览效果
 
-<img src="https://user-images.githubusercontent.com/12181423/150568943-f8727bc1-ba01-46b9-9129-3d456ad1aace.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150568943-f8727bc1-ba01-46b9-9129-3d456ad1aace.png" width="200" />
+<img src="https://user-images.githubusercontent.com/12181423/150568943-f8727bc1-ba01-46b9-9129-3d456ad1aace.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150570323-4518a432-44a2-47f4-b31f-ed0d63d3ddf7.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569860-2f288815-75b8-4cd9-abae-ee90f310826f.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569985-360f6b7e-0805-49e0-89fa-724307140bb5.png" width="200" />
 
 目前还是一个测试demo，所以图片就是一个截屏图，大家先将就看看 😂😂😂
 
