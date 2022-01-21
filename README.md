@@ -35,7 +35,8 @@ $ yarn start
 ```text
 由于 `umijs` 的路由配置中没有支持 icon 属性可以为一个图标，所以需要自己进行处理，处理的方式如下：
 
-在配置 `routes` 时，将`icon`设置为 `antd-mobile-icons` 中的图标名称；然后在 `src/layouts/tab-bar/index.tsx` 中的 `renderTabItemIcon` 函数中对应进行修改。
+在配置 `routes` 时，将`icon`设置为 `antd-mobile-icons` 中的图标名称；
+然后在 `src/layouts/tab-bar/index.tsx` 中的 `renderTabItemIcon` 函数中对应进行修改。
 
 ```
 
