@@ -20,6 +20,12 @@ $ yarn
 ```bash
 $ yarn start
 ```
+## 预览效果
+
+<img src="https://user-images.githubusercontent.com/12181423/150568943-f8727bc1-ba01-46b9-9129-3d456ad1aace.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150568943-f8727bc1-ba01-46b9-9129-3d456ad1aace.png" width="200" />
+
+目前还是一个测试demo，所以图片就是一个截屏图，大家先将就看看 😂😂😂
+
 ## 内置 Layout
 
 在 `src/layouts`中配置了两个常用的 `layout` 组件。
