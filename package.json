@@ -1,0 +1,46 @@
+{
+  "name": "umi-antd-mobile",
+  "version": "0.0.1",
+  "author": "Yanghc",
+  "description": "基于umi@3.x + antd-mobile@next 快速构建h5及app应用",
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "antd-mobile": "^5.0.0-rc.21",
+    "antd-mobile-icons": "^0.2.2",
+    "babel-plugin-import": "^1.13.3",
+    "postcss": "^8.4.5",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.20"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/preset-react": "2.x",
+    "@umijs/test": "^3.5.20",
+    "lint-staged": "^12.2.2",
+    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5",
+    "yorkie": "^2.0.0"
+  }
+}
