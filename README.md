@@ -20,7 +20,7 @@ $ yarn
 ```bash
 $ yarn start
 ```
-## 预览效果
+## 预览效果图
 
 <img src="https://user-images.githubusercontent.com/12181423/150568943-f8727bc1-ba01-46b9-9129-3d456ad1aace.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150570323-4518a432-44a2-47f4-b31f-ed0d63d3ddf7.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569860-2f288815-75b8-4cd9-abae-ee90f310826f.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569985-360f6b7e-0805-49e0-89fa-724307140bb5.png" width="200" />
 
@@ -30,7 +30,7 @@ $ yarn start
 
 在 `src/layouts`中配置了两个常用的 `layout` 组件。
 
->1、`tab-bar` layout 主要用于根据配置的 `routes` 动态生成带有 Tabbar 的页面(如示例图)；同时可以根据浏览器地址栏的地址选择对于的 TabItem;
+>1、`tab-bar` layout 主要用于根据配置的 `routes` 动态生成带有 Tabbar 的页面(如示例效果图)；同时可以根据浏览器地址栏的地址选择对于的 TabItem;
 
 >2、`basic` layout 主要用于普通的路由使用；目前没有做过多的封装；
 
@@ -46,7 +46,7 @@ $ yarn start
 
 ```
 
- >2. ...
+ >2. 整理中 😄😄
 
 
 
