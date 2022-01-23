@@ -1,1 +1,2 @@
-import 'antd-mobile/es/global'
+import 'antd-mobile/es/global';
+import './theme.less';
