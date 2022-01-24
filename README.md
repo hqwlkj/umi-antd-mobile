@@ -20,6 +20,61 @@ $ yarn
 ```bash
 $ yarn start
 ```
+## 部署发布
+
+### 构建
+
+```bash
+$ yarn build
+
+✔ Webpack
+  Compiled successfully in 17.17s
+
+ DONE  Compiled successfully in 17167ms                                       8:26:25 PM
+
+Build success.
+✨  Done in 20.79s.
+```
+
+构建产物默认生成到 `./dist` 下，然后通过 tree 命令查看，
+
+```bash
+tree ./dist
+
+./dist
+├── index.html
+├── umi.css
+└── umi.js
+```
+
+### 本地验证
+
+发布之前，可以通过 `serve` 做本地验证，
+
+```bash
+$ yarn global add serve
+$ serve ./dist
+
+   ┌────────────────────────────────────────────────────┐
+   │                                                    │
+   │   Serving!                                         │
+   │                                                    │
+   │   - Local:            http://localhost:5000        │
+   │   - On Your Network:  http://192.168.12.34:5000    │
+   │                                                    │
+   │   Copied local address to clipboard!               │
+   │                                                    │
+   └────────────────────────────────────────────────────┘
+```
+
+访问 [http://localhost:5000](http://localhost:5000)，正常情况下应该是和执行 `yarn start` 时是一致的。
+
+### 部署
+
+本地验证完，就可以部署了。你需要把 `dist` 目录部署到服务器上。
+
+
+
 ## 预览效果图
 
 <img src="https://user-images.githubusercontent.com/12181423/150568943-f8727bc1-ba01-46b9-9129-3d456ad1aace.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150570323-4518a432-44a2-47f4-b31f-ed0d63d3ddf7.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569860-2f288815-75b8-4cd9-abae-ee90f310826f.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569985-360f6b7e-0805-49e0-89fa-724307140bb5.png" width="200" />
