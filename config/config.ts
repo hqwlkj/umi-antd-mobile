@@ -22,7 +22,7 @@ export default defineConfig({
   alias: {
     // "antd-mobile": "antd-mobile/2x" //使用高清适配
   },
-  // mfsu: { production: { output: ".mfsu-production" } },
+  mfsu: { production: { output: ".mfsu-production" } },
   fastRefresh: {},
   extraBabelPlugins: [
     // ["import", { "libraryName": "antd-mobile", "libraryDirectory": "es/components", "style": false}]

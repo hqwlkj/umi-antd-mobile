@@ -1,6 +1,9 @@
 import { ReactChild, ReactFragment, ReactPortal } from "react";
 
+/**
+ * 这是一个空白的 layout， 显示的内容完全用户自定义
+ * @param props
+ */
 export default (props: { children: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined }) => {
-  console.log('props.children ', props )
-  return <div style={{ padding: 20 }}>{ props.children }</div>;
+  return <div>{ props.children }</div>;
 }
