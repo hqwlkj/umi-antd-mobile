@@ -69,6 +69,14 @@ $ ayarn -v
 
 ## 开始使用
 
+clone项目
+
+```bash
+$ git clone --depth=1 https://github.com/hqwlkj/umi-antd-mobile.git my-project
+
+$ cd my-project
+```
+
 安装项目依赖
 
 ```bash
