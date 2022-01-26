@@ -55,13 +55,16 @@ v10.13.0
 推荐使用 yarn 管理 npm 依赖，并[使用国内源](https://github.com/yiminghe/tyarn)（阿里用户使用内网源）。
 
 ```bash
+
 # 国内源
 $ npm i yarn tyarn -g
+
 # 后面文档里的 yarn 换成 tyarn
 $ tyarn -v
 
 # 阿里内网源
 $ tnpm i yarn @ali/yarn -g
+
 # 后面文档里的 yarn 换成 ayarn
 $ ayarn -v
 ```
@@ -88,6 +91,7 @@ $ yarn
 ```bash
 $ yarn start
 ```
+
 ## 部署发布
 
 ### 构建
