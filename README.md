@@ -145,9 +145,9 @@ $ serve ./dist
 
 本地验证完，就可以部署了。你需要把 `dist` 目录部署到服务器上。
 
-更多关于**umijs**的相关配置，请查询[umijs官方文档](https://umijs.org/zh-CN/config)
+更多关于 **umijs** 的相关配置，请查阅 [umijs官方文档](https://umijs.org/zh-CN/config)
 
-更多关于**antd-mobile**的相关组件使用说明，请查询[Ant Design Mobile官方文档](https://mobile.ant.design/zh/components/button)
+更多关于 **antd-mobile** 的相关组件使用说明，请查阅 [Ant Design Mobile官方文档](https://mobile.ant.design/zh/components/button)
 
 
 ## 预览效果图
