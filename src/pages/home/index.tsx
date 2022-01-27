@@ -1,18 +1,23 @@
-import { Button, Grid, Popover, Space, Swiper, Toast } from "antd-mobile";
-import { useHistory } from "umi";
+import { Button, Grid, Popover, Space, Swiper, Toast } from 'antd-mobile';
+import { useHistory } from 'umi';
 import {
-  AddCircleOutline, AntOutline,
+  AddCircleOutline,
+  AntOutline,
   DownOutline,
-  FolderOutline, ReceivePaymentOutline, RightOutline,
-  ScanningOutline, SearchOutline,
+  FolderOutline,
+  ReceivePaymentOutline,
+  RightOutline,
+  ScanningOutline,
+  SearchOutline,
   TravelOutline,
-  UploadOutline, UserContactOutline
-} from "antd-mobile-icons";
-import styles from "./index.less";
+  UploadOutline,
+  UserContactOutline,
+} from 'antd-mobile-icons';
+import styles from './index.less';
 
 export default function IndexPage() {
   const history = useHistory();
-  const colors = ["#ace0ff", "#bcffbd", "#e4fabd", "#ffcfac"];
+  const colors = ['#ace0ff', '#bcffbd', '#e4fabd', '#ffcfac'];
   const items = colors.map((color, index) => (
     <Swiper.Item key={index}>
       <div
@@ -32,21 +37,33 @@ export default function IndexPage() {
         <Grid columns={12}>
           <Grid.Item span={2}>
             <div className={styles.location}>
-              <div className={styles.locationName}>重庆 &nbsp;<DownOutline /></div>
+              <div className={styles.locationName}>
+                重庆 &nbsp;
+                <DownOutline />
+              </div>
               <div className={styles.weather}>多云 9℃</div>
             </div>
           </Grid.Item>
           <Grid.Item span={8}>
-            <div className={styles["searchBarWarp"]}>
+            <div className={styles.searchBarWarp}>
               <SearchOutline className={styles.icon} />
               <div className={styles.content}>
-                <Swiper direction="vertical" style={{ "--height": "30px" }} autoplay={true} loop={true}
-                        indicator={() => null}>
+                <Swiper
+                  direction="vertical"
+                  style={{ '--height': '30px' }}
+                  autoplay={true}
+                  loop={true}
+                  indicator={() => null}
+                >
                   <Swiper.Item>
-                    <div className={styles.verticalContent}>重庆市第九人民医院</div>
+                    <div className={styles.verticalContent}>
+                      重庆市第九人民医院
+                    </div>
                   </Swiper.Item>
                   <Swiper.Item>
-                    <div className={styles.verticalContent}>重庆市卫健委发布重要通知</div>
+                    <div className={styles.verticalContent}>
+                      重庆市卫健委发布重要通知
+                    </div>
                   </Swiper.Item>
                 </Swiper>
               </div>
@@ -57,28 +74,28 @@ export default function IndexPage() {
             <div className={styles.expand}>
               <Popover
                 content={
-                <div className={styles.expandMenuWarp}>
-                  <div className={styles.menuItem}>
-                    <ScanningOutline className={styles.icon}/>
-                    <div className={styles.menuItemInner}>扫一扫</div>
+                  <div className={styles.expandMenuWarp}>
+                    <div className={styles.menuItem}>
+                      <ScanningOutline className={styles.icon} />
+                      <div className={styles.menuItemInner}>扫一扫</div>
+                    </div>
+                    <div className={styles.menuItem}>
+                      <ReceivePaymentOutline className={styles.icon} />
+                      <div className={styles.menuItemInner}>二维码收款</div>
+                    </div>
+                    <div className={styles.menuItem}>
+                      <UserContactOutline className={styles.icon} />
+                      <div className={styles.menuItemInner}>我的名片</div>
+                    </div>
+                    <div className={styles.menuItem}>
+                      <AntOutline className={styles.icon} />
+                      <div className={styles.menuItemInner}>智能助理</div>
+                    </div>
                   </div>
-                  <div className={styles.menuItem}>
-                    <ReceivePaymentOutline className={styles.icon}/>
-                    <div className={styles.menuItemInner}>二维码收款</div>
-                  </div>
-                  <div className={styles.menuItem}>
-                    <UserContactOutline className={styles.icon}/>
-                    <div className={styles.menuItemInner}>我的名片</div>
-                  </div>
-                  <div className={styles.menuItem}>
-                    <AntOutline className={styles.icon}/>
-                    <div className={styles.menuItemInner}>智能助理</div>
-                  </div>
-                </div>
                 }
-                placement='topRight'
-                mode='dark'
-                trigger='click'
+                placement="topRight"
+                mode="dark"
+                trigger="click"
               >
                 <AddCircleOutline />
               </Popover>
@@ -106,35 +123,59 @@ export default function IndexPage() {
       </div>
       <div className={styles.ribbonWarp}>
         <Grid columns={5}>
-          {
-            ['饿了么','消费金','市民中心','芭芭农场','蚂蚁森林','转账','汇率换算','余额宝','蚂蚁新村','生活缴费','花呗','健康码','运动','我的小程序','更多'].map((text, index)=>(
-              <Grid.Item className={styles.iconWarp} key={`item-${index}`} onClick={() => history.push("/test")}>
-                <ScanningOutline />
-                <div className={styles.iconText}>{text}</div>
-              </Grid.Item>
-            ))
-          }
+          {[
+            '饿了么',
+            '消费金',
+            '市民中心',
+            '芭芭农场',
+            '蚂蚁森林',
+            '转账',
+            '汇率换算',
+            '余额宝',
+            '蚂蚁新村',
+            '生活缴费',
+            '花呗',
+            '健康码',
+            '运动',
+            '我的小程序',
+            '更多',
+          ].map((text, index) => (
+            <Grid.Item
+              className={styles.iconWarp}
+              key={`item-${index}`}
+              onClick={() => history.push('/detail')}
+            >
+              <ScanningOutline />
+              <div className={styles.iconText}>{text}</div>
+            </Grid.Item>
+          ))}
         </Grid>
       </div>
       <div className={styles.messageWarp}>
         <div className={styles.messageList}>
-          <div className={styles.messageItem}>余额宝：余额宝收益到账啦 <span>7分钟前</span></div>
-          <div className={styles.messageItem}>蚂蚁财富：你的基金收益已更新 <span>15分钟前</span></div>
+          <div className={styles.messageItem}>
+            余额宝：余额宝收益到账啦 <span>7分钟前</span>
+          </div>
+          <div className={styles.messageItem}>
+            蚂蚁财富：你的基金收益已更新 <span>15分钟前</span>
+          </div>
         </div>
         <div className={styles.messageArrow}>
           <RightOutline />
         </div>
       </div>
       <div className={styles.adWarp}>
-        <Swiper autoplay={true} loop={true}>{items}</Swiper>
+        <Swiper autoplay={true} loop={true}>
+          {items}
+        </Swiper>
       </div>
       <div>
         <Space wrap>
           <Button
             onClick={() =>
               Toast.show({
-                icon: "success",
-                content: "保存成功"
+                icon: 'success',
+                content: '保存成功',
               })
             }
           >
@@ -143,8 +184,8 @@ export default function IndexPage() {
           <Button
             onClick={() => {
               Toast.show({
-                icon: "fail",
-                content: "名称已存在"
+                icon: 'fail',
+                content: '名称已存在',
               });
             }}
           >
@@ -153,8 +194,8 @@ export default function IndexPage() {
           <Button
             onClick={() => {
               Toast.show({
-                icon: "loading",
-                content: "加载中…"
+                icon: 'loading',
+                content: '加载中…',
               });
             }}
           >
@@ -163,8 +204,8 @@ export default function IndexPage() {
           <Button
             onClick={() => {
               Toast.show({
-                content: "上传中",
-                icon: <UploadOutline />
+                content: '上传中',
+                icon: <UploadOutline />,
               });
             }}
           >

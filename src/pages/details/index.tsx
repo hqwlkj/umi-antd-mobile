@@ -1,7 +1,54 @@
-import React from 'react';
-const Detail = () => {
-  return <div>我是没有设置顶部导航栏的页面，使用的默认的导航栏</div>;
-};
+import { NavBar, Toast, Result, Space, ProgressCircle } from 'antd-mobile';
+import { useHistory } from 'umi';
+import { useContext } from 'react';
+import { TabBarContext } from '@/layouts';
 
-Detail.title = 'xxxxxx';
-export default Detail;
+export default () => {
+  const history = useHistory();
+  const todo = useContext(TabBarContext);
+  const back = () =>
+    Toast.show({
+      content: '点击了返回区域',
+      duration: 1000,
+      afterClose: () => history.goBack(),
+    });
+
+  return (
+    <div>
+      <NavBar back="返回" onBack={back}>
+        详情页面
+      </NavBar>
+      <Result
+        status="success"
+        title="操作成功"
+        description="内容详情可折行，建议不超过两行建议不超过两行建议不超过两行"
+      />
+      <Space justify={'center'} block style={{ '--gap': '24px' }}>
+        <div style={{ fontSize: 22 }}>
+          待办数：{todo.items.todoBadge || '0'}
+        </div>
+        <div style={{ fontSize: 22 }}>
+          消息数：{todo.items.messageBadge || '0'}
+        </div>
+      </Space>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div>
+        <div className="">指定线条宽度</div>
+        <Space style={{ '--gap': '24px' }}>
+          <ProgressCircle percent={75} style={{ '--track-width': '2px' }}>
+            75%
+          </ProgressCircle>
+          <ProgressCircle percent={75} style={{ '--track-width': '3px' }}>
+            75%
+          </ProgressCircle>
+          <ProgressCircle percent={75} style={{ '--track-width': '4px' }}>
+            75%
+          </ProgressCircle>
+        </Space>
+      </div>
+    </div>
+  );
+};
