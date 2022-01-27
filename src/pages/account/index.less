@@ -1,5 +1,131 @@
-.title {
-  background: rgb(121, 242, 157);
-  font-size: 36px;
-  color: white;
+.account {
+  position: relative;
+  background: #fafafa;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .body {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 158px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  :global {
+    .adm-nav-bar {
+      background: #1890ff;
+    }
+
+    .adm-list-card {
+      margin: 0;
+    }
+  }
+
+  .leftTitle {
+    font-size: 32px;
+    color: #ffffff;
+  }
+
+  :global {
+    .adm-pull-to-refresh-head {
+      background: #1890ff;
+      color: #a2d0fa;
+      font-size: 20px;
+      text-align: center;
+
+      .adm-dot-loading {
+        font-size: 38px;
+        color: #a2d0fa;
+      }
+    }
+  }
+
+  .reshingWarp {
+    color: #a2d0fa;
+
+    :global {
+      .antd-mobile-icon {
+        font-size: 62px;
+      }
+    }
+  }
+
+  .headerWarp {
+    background: #1890ff;
+    --adm-border-color: #1890ff;
+
+    :global {
+      .adm-list-body {
+        background: #1890ff;
+        --size: var(--adm-avatar-size, 80px);
+
+        .adm-avatar {
+          border: 5px solid #a2d0fa;
+          background: #a2d0fa;
+
+          &.adm-image {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .adm-list-item-content-arrow {
+          color: #ffffff;
+        }
+
+        .adm-list-item-content-main {
+          color: #ffffff;
+
+          .adm-list-item-description {
+            color: #a2d0fa;
+          }
+        }
+      }
+    }
+  }
+
+  .listGroupWarp {
+    background: #ffffff;
+    margin: 15px 25px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    :global {
+      .icon-1 {
+        color: #1890ff;
+        font-size: 34px;
+      }
+
+      .icon-2 {
+        color: #f8b44b;
+        font-size: 34px;
+      }
+
+      .icon-3 {
+        color: #ff4400;
+        font-size: 34px;
+      }
+
+      .extraDefault {
+        font-size: 26px;
+      }
+
+      .extra-1 {
+        color: #f8b44b;
+        font-size: 26px;
+      }
+
+      .adm-list {
+        --font-size: 30px;
+      }
+
+      .adm-list-item-content-arrow {
+        font-size: 26px;
+      }
+    }
+  }
 }
