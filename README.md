@@ -162,7 +162,9 @@ $ serve ./dist
 
 >1、`tab-bar` layout 主要用于根据配置的 `routes` 动态生成带有 Tabbar 的页面(如示例效果图)；同时可以根据浏览器地址栏的地址选择对于的 TabItem;
 
->2、`basic` layout 主要用于普通的路由使用；目前没有做过多的封装；
+>2、<del> `basic` layout 主要用于普通的路由使用；目前没有做过多的封装；</del>
+
+**这里的layout需要重新在构思一下；也希望社区能提供更好的建议**
 
 
 ## FAQ
