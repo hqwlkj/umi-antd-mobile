@@ -191,4 +191,6 @@ $ serve ./dist
 
 
 
+## LICENSE
 
+[MIT](https://github.com/hqwlkj/umi-antd-mobile/blob/master/LICENSE)
