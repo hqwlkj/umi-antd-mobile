@@ -1,25 +1,40 @@
-import { useCallback, useEffect, useState } from "react";
-import { TabBar } from "antd-mobile";
-import { TabBarItemProps } from "antd-mobile/es/components/tab-bar";
-import { IRouteComponentProps } from "umi";
-import styles from "./index.less";
-import { AlipayCircleFill, AppOutline, MessageFill, UnorderedListOutline, UserOutline } from "antd-mobile-icons";
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { TabBar } from 'antd-mobile';
+import type { TabBarItemProps } from 'antd-mobile/es/components/tab-bar';
+import type { IRouteComponentProps } from 'umi';
+import {
+  AlipayCircleFill,
+  AppOutline,
+  MessageFill,
+  UnorderedListOutline,
+  UserOutline,
+} from 'antd-mobile-icons';
+import styles from './index.less';
+import { TabBarContext } from '@/layouts';
 
-export default ({ children, route, history, location }: IRouteComponentProps) => {
+export default ({
+  children,
+  route,
+  history,
+  location,
+}: IRouteComponentProps) => {
   const [tabs, setTabs] = useState<TabBarItemProps[] | any[]>([]);
-  const [activeKey, setActiveKey] = useState<string>("");
-
+  const [activeKey, setActiveKey] = useState<string>('');
+  const tabBarContext = useContext(TabBarContext);
   useEffect(() => {
     const { pathname } = location;
     if (route) {
       const { routes } = route as any;
-      const _tabs = (routes || []).map((_route: any, index: number) => ({
-        key: (_route.path || "").replace("/", ""),
-        title: _route.title,
-        icon: _route.icon
-      }));
+      const _tabs = (routes || [])
+        .filter((x: any) => !!x.icon)
+        .map((_route: any) => ({
+          key: (_route.path || '').replace('/', ''),
+          title: _route.title,
+          icon: _route.icon,
+          badge: _route.badgeKey,
+        }));
       if (pathname) {
-        setActiveKey(pathname.replace("/", ""));
+        setActiveKey(pathname.replace('/', ''));
       } else {
         setActiveKey(_tabs[0].key);
       }
@@ -29,35 +44,45 @@ export default ({ children, route, history, location }: IRouteComponentProps) =>
 
   const renderTabItemIcon = useCallback((name: string) => {
     switch (name) {
-      case "AppOutline":
+      case 'AppOutline':
         return <AppOutline />;
-      case "AlipayCircleFill":
+      case 'AlipayCircleFill':
         return <AlipayCircleFill />;
-      case "UnorderedListOutline":
+      case 'UnorderedListOutline':
         return <UnorderedListOutline />;
-      case "MessageFill":
+      case 'MessageFill':
         return <MessageFill />;
-      case "MessageOutline":
+      case 'MessageOutline':
         return <MessageFill />;
-      case "UserOutline":
+      case 'UserOutline':
         return <UserOutline />;
       default:
-        return "";
+        return '';
     }
   }, []);
 
-
-  return (<div className={styles["tab-bar-layout"]}>
-    <div className={styles["container-warp"]}>
-      <div className={styles["view-warp"]}>{children}</div>
+  return (
+    <div className={styles['tab-bar-layout']}>
+      <div className={styles['container-warp']}>
+        <div className={styles['view-warp']}>{children}</div>
+      </div>
+      <TabBar
+        activeKey={activeKey}
+        onChange={(key) => {
+          setActiveKey(key);
+          history.replace('/' + key);
+        }}
+        safeArea
+      >
+        {tabs.map((item) => (
+          <TabBar.Item
+            key={item.key}
+            icon={renderTabItemIcon(item.icon)}
+            title={item.title}
+            badge={tabBarContext.items[item.badge] || null}
+          />
+        ))}
+      </TabBar>
     </div>
-    <TabBar activeKey={activeKey} onChange={(key) => {
-      setActiveKey(key);
-      history.replace("/" + key);
-    }} safeArea>
-      {tabs.map((item, index) => (
-        <TabBar.Item key={item.key} icon={renderTabItemIcon(item.icon)} title={item.title} />
-      ))}
-    </TabBar>
-  </div>);
-}
+  );
+};
