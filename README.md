@@ -9,7 +9,7 @@
   </a>
   <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <a href='https://mobile.ant.design/zh'>
-    <img src='https://gw.alipayobjects.com/zos/bmw-prod/b4eaf7fb-c494-497a-81a7-4b588555948c.svg' width='105'/>
+    <img src='https://gw.alipayobjects.com/zos/bmw-prod/b2c7ff8b-eba0-4af9-9dd5-0b5b17f42c57.svg' width='105'/>
   </a>
 </p>
 <p align="center" height='100'>
