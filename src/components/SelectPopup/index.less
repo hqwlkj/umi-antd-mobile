@@ -1,0 +1,77 @@
+.select-popup-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 62px;
+  padding: 0 16px;
+  border-bottom: 1px solid #f8f8f8;
+  &-cancel {
+    width: 100px;
+    height: 62px;
+    color: #8e8e8e;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    line-height: 62px;
+  }
+  &-title {
+    color: #1e1e1e;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    line-height: 22px;
+  }
+  &-ok {
+    width: 100px;
+    height: 62px;
+    color: #007e4e;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    line-height: 62px;
+    text-align: right;
+  }
+}
+.h-select-popup-content {
+  box-sizing: border-box;
+  margin-top: 0;
+  padding-bottom: 55px;
+
+  .h-select-popup-option {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    min-height: 56px;
+    margin: 0 16px;
+
+    &.bordered {
+      border-color: #f8f8f8;
+      border-style: solid;
+      border-width: 1px 0 0;
+    }
+    .h-select-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      .h-select-box-circle {
+        width: 8px;
+        height: 8px;
+        background-color: #007e4e;
+        border-radius: 4px;
+      }
+    }
+    .h-select-popup-option-label {
+      margin-left: 10px;
+      color: #1e1e1e;
+      font-weight: 400;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      line-height: 20px;
+    }
+  }
+}

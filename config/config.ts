@@ -1,6 +1,5 @@
-import { defineConfig } from "umi";
-import routes from "./routes";
-
+import { defineConfig } from 'umi';
+import routes from './routes';
 
 /**
  * UMI 配置
@@ -8,44 +7,44 @@ import routes from "./routes";
  */
 export default defineConfig({
   layout: false,
-  title: "umi-antd-mobile",
+  title: 'umi-antd-mobile',
   dynamicImport: {
-    loading: "@/pages/loading"
+    loading: '@/pages/loading',
   },
   routes: [...routes],
   nodeModulesTransform: {
-    type: "none"
+    type: 'none',
   },
   antdMobile: {
-    hd: true
+    hd: true,
   },
   alias: {
     // "antd-mobile": "antd-mobile/2x" //使用高清适配
   },
-  mfsu: { production: { output: ".mfsu-production" } },
+  mfsu: { production: { output: '.mfsu-production' } },
   fastRefresh: {},
   extraBabelPlugins: [
     // ["import", { "libraryName": "antd-mobile", "libraryDirectory": "es/components", "style": false}]
   ],
   extraPostCSSPlugins: [
-    require("postcss-px-to-viewport")({
-      viewportWidth: 750,
-      mediaQuery: true
-    })
+    require('postcss-px-to-viewport')({
+      viewportWidth: 375,
+      mediaQuery: true,
+    }),
   ],
   metas: [
     {
-      name: "keywords",
-      content: "umi, umijs, antd-mobile"
+      name: 'keywords',
+      content: 'umi, umijs, antd-mobile',
     },
     {
-      name: "description",
-      content: "基于umi@3.x + antd-mobile@next 快速构建h5及app应用"
-    }
+      name: 'description',
+      content: '基于umi@3.x + antd-mobile@next 快速构建h5及app应用',
+    },
   ],
   // https://mobile.ant.design/zh/guide/quick-start#%E5%85%BC%E5%AE%B9%E6%80%A7
-  targets:{
+  targets: {
     chrome: 49,
-    ios: 10
-  }
+    ios: 10,
+  },
 });
