@@ -48,7 +48,18 @@ export default [
       },
       { path: '/detail', title: '详情页', component: '@/pages/details/index' },
       { path: '/login', component: '@/pages/login/index' },
+      // 首页
+      { path: '/home-page', component: '@/pages/homePage/index' },
+      // 领取记录
+      { path: '/history-page', component: '@/pages/historyPage/index' },
+      // 领取页面
+      { path: '/application-page', component: '@/pages/applicationPage/index' },
+      // 提需求
+      { path: '/needs-page', component: '@/pages/needsPage/index' },
+      // 愿望池
+      { path: '/wishes-page', component: '@/pages/wishesPage/index' },
       { path: '/*', component: '@/pages/404' },
+      { path: '/**/*', redirect: '/404' },
       { path: '/**/*', redirect: '/404' },
     ],
   },
