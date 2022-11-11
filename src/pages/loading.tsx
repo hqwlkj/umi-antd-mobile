@@ -1,4 +1,3 @@
-import React from 'react';
 import '../app.less';
 import { SpinLoading } from 'antd-mobile';
 
@@ -10,7 +9,7 @@ export default () => {
   return (
     <div className="loading-warp">
       <div>
-        <SpinLoading color="primary" />
+        <SpinLoading style={{ '--size': '24px' }} color="primary" />
       </div>
       <div className="loading-warp-text">加载中...</div>
     </div>
