@@ -1,10 +1,10 @@
 .tab-bar-layout {
   position: relative;
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  width: 100%;
+  height: 100vh;
 
   .container-warp {
     position: relative;
@@ -12,20 +12,20 @@
     overflow: hidden;
 
     &:after {
-      content: '';
       position: absolute;
-      left: 0;
       right: 0;
       bottom: 0;
+      left: 0;
       height: 1px;
       box-shadow: 0 0 10px 0 #999999;
+      content: '';
     }
 
     .view-warp {
       position: relative;
-      overflow-y: auto;
       height: 100%;
-      > div{
+      overflow-y: auto;
+      > div {
         width: 100%;
         height: 100%;
       }
@@ -33,7 +33,6 @@
       &::-webkit-scrollbar {
         display: none;
       }
-
     }
   }
 }

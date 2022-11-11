@@ -1,14 +1,14 @@
 .account {
   position: relative;
-  background: #fafafa;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  background: #fafafa;
 
   .body {
     flex: 1;
-    overflow-y: auto;
     padding-bottom: 158px;
+    overflow-y: auto;
 
     &::-webkit-scrollbar {
       display: none;
@@ -26,20 +26,20 @@
   }
 
   .leftTitle {
-    font-size: 32px;
     color: #ffffff;
+    font-size: 32px;
   }
 
   :global {
     .adm-pull-to-refresh-head {
-      background: #1890ff;
       color: #a2d0fa;
       font-size: 20px;
       text-align: center;
+      background: #1890ff;
 
       .adm-dot-loading {
-        font-size: 38px;
         color: #a2d0fa;
+        font-size: 38px;
       }
     }
   }
@@ -64,8 +64,8 @@
         --size: var(--adm-avatar-size, 80px);
 
         .adm-avatar {
-          border: 5px solid #a2d0fa;
           background: #a2d0fa;
+          border: 5px solid #a2d0fa;
 
           &.adm-image {
             width: 100px;
@@ -89,10 +89,10 @@
   }
 
   .listGroupWarp {
-    background: #ffffff;
     margin: 15px 25px;
-    border-radius: 20px;
     overflow: hidden;
+    background: #ffffff;
+    border-radius: 20px;
 
     :global {
       .icon-1 {
