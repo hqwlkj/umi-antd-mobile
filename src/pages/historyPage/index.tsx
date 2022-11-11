@@ -1,17 +1,22 @@
 import { NavBar, Toast, Card } from 'antd-mobile';
 import { useHistory } from 'umi';
+import { useEffect } from 'react';
 import cardIcon from '@/images/wishes/card-icon.png';
+import rest from '@/rest';
 
 import './index.less';
 
 export default () => {
   const history = useHistory();
-  const back = () =>
-    Toast.show({
-      content: '点击了返回区域',
-      duration: 1000,
-      afterClose: () => history.goBack(),
+  const back = () => {
+    history.goBack();
+  };
+
+  useEffect(() => {
+    rest('/customers/6910/office/records').then((res) => {
+      console.log(res, '0-=0-=-=');
     });
+  }, []);
 
   const historyData = [
     {
@@ -68,7 +73,7 @@ export default () => {
               key={index2}
               title={
                 <div className="card-header">
-                  <div>
+                  <div className="card-header-left">
                     <img src={cardIcon} alt="" />
                     <span className="card-title">{item2.title}</span>
                   </div>

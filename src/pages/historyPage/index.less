@@ -5,6 +5,25 @@
   .history-nav-bar {
     background: #fff;
   }
+  .adm-nav-bar {
+    height: auto;
+    padding: 9px 12px 10px;
+
+    .adm-nav-bar-back {
+      padding: 0;
+    }
+
+    .adm-nav-bar-back-arrow {
+      font-size: 18px;
+    }
+
+    .adm-nav-bar-title {
+      font-weight: 500;
+      font-size: 18px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      line-height: 25px;
+    }
+  }
 
   .date-item {
     display: flex;
@@ -23,7 +42,9 @@
     .things-card {
       margin: 0 11px 8px 11px;
       background: #ffffff;
-
+      .adm-card-header {
+        padding: 0;
+      }
       .adm-card-header-title {
         width: 100%;
       }
@@ -33,9 +54,13 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        padding: 10px 0;
 
         background-color: #fff;
-
+        .card-header-left {
+          display: flex;
+          align-items: center;
+        }
         img {
           width: 16px;
           height: 16px;

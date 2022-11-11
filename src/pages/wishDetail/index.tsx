@@ -1,15 +1,4 @@
-import {
-  NavBar,
-  Toast,
-  // Swiper,
-  // Space,
-  // Button,
-  // List,
-  // Avatar,
-  // Image,
-  Tabs,
-  Card,
-} from 'antd-mobile';
+import { NavBar, Card } from 'antd-mobile';
 import { useHistory } from 'umi';
 import addIcon from '@/images/wishes/add-icon.png';
 import addIconDefault from '@/images/wishes/add-icon-default.png';
@@ -19,8 +8,6 @@ import commentIcon from '@/images/wishes/comment-icon.png';
 import personWang from '@/images/wishes/person-wang.png';
 
 import React, { useState } from 'react';
-
-// import { tools } from '@/mock/home';
 
 import './index.less';
 
@@ -58,12 +45,9 @@ export default () => {
     },
   ];
 
-  const back = () =>
-    Toast.show({
-      content: '点击了返回区域',
-      duration: 1000,
-      afterClose: () => history.goBack(),
-    });
+  const back = () => {
+    history.goBack();
+  };
 
   const handleAddClick = (id: number) => {
     console.log(id);

@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 // 基本配置
-axios.defaults.baseURL = 'https://379c-114-86-93-78.jp.ngrok.io/'; //api前缀
+axios.defaults.baseURL = 'https://2451-114-86-93-78.jp.ngrok.io'; //api前缀
 
 const rest = axios.create({
   xsrfCookieName: 'xsrf-token', // `xsrfCookieName` 是用作 xsrf token 的值的cookie的名称
-  timeout: 1000, // 如果请求话费了超过 `timeout` 的时间，请求将被中断
+  timeout: 20000, // 如果请求话费了超过 `timeout` 的时间，请求将被中断
 });
 
 rest.interceptors.request.use(

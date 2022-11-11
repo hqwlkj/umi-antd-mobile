@@ -17,12 +17,9 @@ import './index.less';
 export default () => {
   const history = useHistory();
   const [visible, setVisible] = useState(true);
-  const back = () =>
-    Toast.show({
-      content: '点击了返回区域',
-      duration: 1000,
-      afterClose: () => history.goBack(),
-    });
+  const back = () => {
+    history.goBack();
+  };
 
   return (
     <div className="needs-page">

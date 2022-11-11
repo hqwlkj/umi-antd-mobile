@@ -6,6 +6,25 @@
     background: #fff;
   }
 
+  .adm-nav-bar {
+    height: auto;
+    padding: 9px 12px 10px;
+
+    .adm-nav-bar-back {
+      padding: 0;
+    }
+
+    .adm-nav-bar-back-arrow {
+      font-size: 18px;
+    }
+
+    .adm-nav-bar-title {
+      font-weight: 500;
+      font-size: 18px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      line-height: 25px;
+    }
+  }
   .needs-main {
     display: flex;
     flex-direction: column;
@@ -21,6 +40,51 @@
 
       .adm-list-card {
         margin: 0;
+        .adm-list-item {
+          padding-left: 16px;
+
+          .adm-list-item-content-prefix {
+            width: 80px;
+            padding: 12px 0 0 0;
+
+            .adm-form-item-label {
+              padding: 12px 0;
+            }
+
+            label {
+              color: #666666;
+              font-weight: 400;
+              font-size: 16px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              line-height: 24px;
+            }
+          }
+
+          .adm-list-item-content-main {
+            padding: 0;
+
+            .adm-form-item-child {
+              padding: 12px 0;
+            }
+
+            input {
+              color: #c7c7c7;
+              font-weight: 400;
+              font-size: 16px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              line-height: 24px;
+            }
+
+            textarea {
+              padding: 12px 0 0 0;
+              color: rgba(30, 30, 30, 0.25);
+              font-weight: 400;
+              font-size: 16px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              line-height: 20px;
+            }
+          }
+        }
       }
     }
 
