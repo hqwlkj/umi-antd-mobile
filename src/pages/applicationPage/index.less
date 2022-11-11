@@ -1,6 +1,22 @@
 .application-content {
   height: 100vh;
   background-color: #f4f4f4;
+  .adm-nav-bar {
+    height: auto;
+    padding: 9px 12px 10px;
+    .adm-nav-bar-back {
+      padding: 0;
+    }
+    .adm-nav-bar-back-arrow {
+      font-size: 18px;
+    }
+    .adm-nav-bar-title {
+      font-weight: 500;
+      font-size: 18px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      line-height: 25px;
+    }
+  }
   .application-nav {
     background-color: #fff;
   }
@@ -10,13 +26,46 @@
       margin: 0;
       .adm-list-body {
         border-radius: unset;
+        .adm-list-item {
+          padding-left: 16px;
+        }
         .adm-list-item-content {
-          border-color: #f8f8f8;
+          align-items: center;
+          padding: 12px 16px 12px 0;
+          border-top: 1px solid #f8f8f8;
+          .adm-form-item-label {
+            color: #666666;
+            font-weight: 400;
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            line-height: 24px;
+          }
+          .adm-input {
+            min-height: unset;
+          }
+          .adm-list-item-content-prefix {
+            width: 100px;
+            padding: 0;
+          }
+          .adm-list-item-content-main {
+            padding: 0;
+          }
+          .adm-input-element {
+            color: #000000;
+            font-weight: 400;
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            line-height: 24px;
+          }
+          .adm-list-item-content-arrow {
+            font-size: 18px;
+          }
         }
       }
     }
     .no-selected-form {
       .adm-list-item-description {
+        width: 100%;
         color: #c7c7c7;
         font-weight: 400;
         font-size: 16px;
@@ -46,11 +95,14 @@
     .adm-button-default {
       width: 166px;
       height: 40px;
+      padding: 7px 0;
+      font-size: 16px;
     }
     .adm-button-primary {
       width: 166px;
-      height: 40px;
       margin-left: 6px;
+      padding: 7px 0;
+      font-size: 16px;
       background-color: #007e4e;
     }
   }
