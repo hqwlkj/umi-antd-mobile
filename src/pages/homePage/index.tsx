@@ -39,7 +39,7 @@ export default () => {
               <Button
                 shape="rounded"
                 onClick={() => {
-                  alert('hello.');
+                  history.push('/history-page');
                 }}
               >
                 <div style={{ display: 'flex' }}>
@@ -52,7 +52,7 @@ export default () => {
               <Button
                 shape="rounded"
                 onClick={() => {
-                  alert('hello.');
+                  history.push('/wishes-page');
                 }}
                 className="left-icon"
               >
@@ -75,7 +75,7 @@ export default () => {
           <div
             className="home-tools-needs"
             onClick={() => {
-              alert('hello.');
+              history.push('/needs-page');
             }}
           >
             <img src={edit} className="home-tools-edit" />

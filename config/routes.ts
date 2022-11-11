@@ -58,6 +58,8 @@ export default [
       { path: '/needs-page', component: '@/pages/needsPage/index' },
       // 愿望池
       { path: '/wishes-page', component: '@/pages/wishesPage/index' },
+      // 愿望详情
+      { path: '/wishes-detail', component: '@/pages/wishDetail/index' },
       { path: '/*', component: '@/pages/404' },
       { path: '/**/*', redirect: '/404' },
       { path: '/**/*', redirect: '/404' },
