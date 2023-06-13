@@ -2,13 +2,13 @@
   "name": "umi-antd-mobile",
   "version": "0.0.1",
   "author": "Yanghc",
-  "description": "基于umi@3.x + antd-mobile@next 快速构建h5及app应用",
+  "description": "基于umi@4.x + antd-mobile@next 快速构建h5及app应用",
   "private": true,
   "scripts": {
-    "analyze": "cross-env ANALYZE=1 umi build",
-    "start": "umi dev",
-    "build": "umi build",
-    "postinstall": "umi generate tmp",
+    "analyze": "cross-env ANALYZE=1 max build",
+    "start": "max dev",
+    "build": "max build",
+    "postinstall": "max setup",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
@@ -29,25 +29,24 @@
     ]
   },
   "dependencies": {
-    "antd-mobile": "^5.0.0-rc.25",
-    "antd-mobile-icons": "^0.2.2",
+    "@umijs/max": "^4.0.70",
+    "antd-mobile": "^5.30.0",
+    "antd-mobile-icons": "^0.3.0",
     "postcss": "^8.4.5",
-    "react": "17.x",
-    "react-dom": "17.x",
-    "umi": "^3.5.20"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/mockjs": "^1.0.6",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@umijs/fabric": "^2.10.1",
-    "@umijs/preset-react": "2.x",
-    "@umijs/test": "^3.5.20",
-    "lint-staged": "^12.3.3",
+    "@types/react": "^18.2.11",
+    "@types/react-dom": "^18.2.4",
+    "@umijs/fabric": "^4.0.1",
+    "@umijs/test": "^4.0.70",
+    "lint-staged": "^13.2.2",
     "mockjs": "^1.1.0",
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.5",
+    "typescript": "^5.1.3",
     "yorkie": "^2.0.0"
   }
 }
