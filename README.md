@@ -5,11 +5,11 @@
 <br/>
 <p align="center">
   <a href='https://umijs.org/zh-CN/'>
-    <img src='https://user-images.githubusercontent.com/12181423/150708308-e0ca55ed-1bda-4db6-9e69-f34dbc27c01d.png' width='80' />
+    <img src='https://user-images.githubusercontent.com/12181423/150708308-e0ca55ed-1bda-4db6-9e69-f34dbc27c01d.png' width='80'  alt="umijs"/>
   </a>
   <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <a href='https://mobile.ant.design/zh'>
-    <img src='https://gw.alipayobjects.com/zos/bmw-prod/b2c7ff8b-eba0-4af9-9dd5-0b5b17f42c57.svg' width='105'/>
+    <img src='https://gw.alipayobjects.com/zos/bmw-prod/b2c7ff8b-eba0-4af9-9dd5-0b5b17f42c57.svg' width='105' alt="mobile"/>
   </a>
 </p>
 <p align="center" height='100'>

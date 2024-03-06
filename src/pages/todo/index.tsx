@@ -1,16 +1,15 @@
+import { TabBarContext } from '@/layouts';
+import { history } from '@umijs/max';
 import { Badge, List, Switch } from 'antd-mobile';
 import {
   PayCircleOutline,
   SetOutline,
   UnorderedListOutline,
 } from 'antd-mobile-icons';
-import React, { useCallback, useContext, useState } from 'react';
-import { TabBarContext } from '@/layouts';
-import { useHistory } from 'umi';
+import { useCallback, useContext, useState } from 'react';
 
 const Todo = () => {
   const todo = useContext(TabBarContext);
-  const history = useHistory();
   const [count, setCount] = useState(0);
 
   const addTodoList = useCallback(() => {

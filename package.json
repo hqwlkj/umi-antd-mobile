@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "analyze": "cross-env ANALYZE=1 max build",
-    "start": "max dev",
+    "dev": "max dev",
     "build": "max build",
     "postinstall": "max setup",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",

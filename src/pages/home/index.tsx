@@ -1,5 +1,13 @@
-import { Button, Grid, Popover, Space, Swiper, Toast } from 'antd-mobile';
-import { useHistory } from 'umi';
+import { history } from '@umijs/max';
+import {
+  Button,
+  Grid,
+  Popover,
+  Space,
+  Swiper,
+  Switch,
+  Toast,
+} from 'antd-mobile';
 import {
   AddCircleOutline,
   AntOutline,
@@ -13,10 +21,10 @@ import {
   UploadOutline,
   UserContactOutline,
 } from 'antd-mobile-icons';
+import { useLayoutEffect, useState } from 'react';
 import styles from './index.less';
 
 export default function IndexPage() {
-  const history = useHistory();
   const colors = ['#ace0ff', '#bcffbd', '#e4fabd', '#ffcfac'];
   const items = colors.map((color, index) => (
     <Swiper.Item key={index}>
@@ -31,6 +39,15 @@ export default function IndexPage() {
       </div>
     </Swiper.Item>
   ));
+  const [enableDarkMode, setEnableDarkMode] = useState(false);
+
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute(
+      'data-prefers-color-scheme',
+      enableDarkMode ? 'dark' : 'light',
+    );
+  }, [enableDarkMode]);
+
   return (
     <div className={styles.homeWarp}>
       <div className={styles.header}>
@@ -211,6 +228,17 @@ export default function IndexPage() {
           >
             自定义图标
           </Button>
+        </Space>
+      </div>
+      <div>
+        <Space align="center">
+          <div>Dark Mode</div>
+          <Switch
+            checked={enableDarkMode}
+            onChange={(v) => {
+              setEnableDarkMode(v);
+            }}
+          />
         </Space>
       </div>
     </div>

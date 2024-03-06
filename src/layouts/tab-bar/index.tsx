@@ -1,7 +1,5 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { history, useLocation, useOutletContext } from '@umijs/max';
 import { TabBar } from 'antd-mobile';
-import type { TabBarItemProps } from 'antd-mobile/es/components/tab-bar';
-import type { IRouteComponentProps } from 'umi';
 import {
   AlipayCircleFill,
   AppOutline,
@@ -9,38 +7,43 @@ import {
   UnorderedListOutline,
   UserOutline,
 } from 'antd-mobile-icons';
+import type { TabBarItemProps } from 'antd-mobile/es/components/tab-bar';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './index.less';
-import { TabBarContext } from '@/layouts';
 
-export default ({
-  children,
-  route,
-  history,
-  location,
-}: IRouteComponentProps) => {
+export default ({ children }: { children: React.ReactNode }) => {
   const [tabs, setTabs] = useState<TabBarItemProps[] | any[]>([]);
-  const [activeKey, setActiveKey] = useState<string>('');
-  const tabBarContext = useContext(TabBarContext);
+  // const [activeKey, setActiveKey] = useState<string>('');
+  const { pathname } = useLocation();
+  const props = useOutletContext();
+  console.log('proddddddddps', props);
+
+  // useEffect(() => {
+  //   const { pathname } = location;
+  //   console.log('========================');
+  //   if (props) {
+  //     const { routes, name } = props as any;
+  //     console.log('name', name);
+  //     const _tabs = (routes || [])
+  //       .filter((x: any) => !!x.icon)
+  //       .map((_route: any) => ({
+  //         key: (_route.path || '').replace('/', ''),
+  //         title: _route.title,
+  //         icon: _route.icon,
+  //         badge: _route.badgeKey,
+  //       }));
+  //     if (pathname) {
+  //       // setActiveKey(pathname.replace('/', ''));
+  //     } else {
+  //       // setActiveKey(_tabs[0].key);
+  //     }
+  //     console.log('tabs', tabs);
+  //     setTabs(_tabs);
+  //   }
+  // }, [props]);
   useEffect(() => {
-    const { pathname } = location;
-    if (route) {
-      const { routes } = route as any;
-      const _tabs = (routes || [])
-        .filter((x: any) => !!x.icon)
-        .map((_route: any) => ({
-          key: (_route.path || '').replace('/', ''),
-          title: _route.title,
-          icon: _route.icon,
-          badge: _route.badgeKey,
-        }));
-      if (pathname) {
-        setActiveKey(pathname.replace('/', ''));
-      } else {
-        setActiveKey(_tabs[0].key);
-      }
-      setTabs(_tabs);
-    }
-  }, [route, location]);
+    console.log('weqqqqqqqqewqewqeqeqqqeqewqqqe');
+  }, []);
 
   const renderTabItemIcon = useCallback((name: string) => {
     switch (name) {
@@ -67,19 +70,19 @@ export default ({
         <div className={styles['view-warp']}>{children}</div>
       </div>
       <TabBar
-        activeKey={activeKey}
+        // activeKey={activeKey}
         onChange={(key) => {
-          setActiveKey(key);
+          // setActiveKey(key);
           history.replace('/' + key);
         }}
         safeArea
       >
-        {tabs.map((item) => (
+        {tabs.map((item: TabBarItemProps) => (
           <TabBar.Item
-            key={item.key}
-            icon={renderTabItemIcon(item.icon)}
+            key={item.tabIndex}
+            icon={renderTabItemIcon(item.icon as string)}
             title={item.title}
-            badge={tabBarContext.items[item.badge] || null}
+            // badge={tabBarContext.items[item.badge as any] || null}
           />
         ))}
       </TabBar>

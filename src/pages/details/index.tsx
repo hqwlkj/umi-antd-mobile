@@ -1,16 +1,15 @@
-import { NavBar, Toast, Result, Space, ProgressCircle } from 'antd-mobile';
-import { useHistory } from 'umi';
-import { useContext } from 'react';
 import { TabBarContext } from '@/layouts';
+import { history } from '@umijs/max';
+import { NavBar, ProgressCircle, Result, Space, Toast } from 'antd-mobile';
+import { useContext } from 'react';
 
 export default () => {
-  const history = useHistory();
   const todo = useContext(TabBarContext);
   const back = () =>
     Toast.show({
       content: '点击了返回区域',
       duration: 1000,
-      afterClose: () => history.goBack(),
+      afterClose: () => history.back(),
     });
 
   return (

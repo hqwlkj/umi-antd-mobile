@@ -21,7 +21,7 @@ export default [
         icon: 'UnorderedListOutline',
         wrappers: [
           // 配置路由的高阶组件封装
-          '@/authority/index', //用于路由级别的权限校验
+          '@/wrappers/index', //用于路由级别的权限校验
         ],
         component: '@/pages/todo/index',
       },
@@ -32,7 +32,7 @@ export default [
         badgeKey: 'messageBadge',
         wrappers: [
           // 配置路由的高阶组件封装
-          '@/authority/index', //用于路由级别的权限校验
+          '@/wrappers/index', //用于路由级别的权限校验
         ],
         component: '@/pages/message/index',
       },
@@ -42,12 +42,12 @@ export default [
         icon: 'UserOutline',
         wrappers: [
           // 配置路由的高阶组件封装
-          '@/authority/index', //用于路由级别的权限校验
+          '@/wrappers/index', //用于路由级别的权限校验
         ],
         component: '@/pages/account/index',
       },
       { path: '/detail', title: '详情页', component: '@/pages/details/index' },
-      { path: '/login', component: '@/pages/login/index' },
+      { path: '/login', component: '@/pages/login/index', layout: false },
       { path: '/*', component: '@/pages/404' },
       { path: '/**/*', redirect: '/404' },
     ],
