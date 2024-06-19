@@ -11,7 +11,8 @@
     "postinstall": "max setup",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "prepare": "husky"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
@@ -29,24 +30,29 @@
     ]
   },
   "dependencies": {
-    "@umijs/max": "^4.0.70",
-    "antd-mobile": "^5.30.0",
+    "@umijs/max": "^4.2.11",
+    "antd-mobile": "^5.36.1",
     "antd-mobile-icons": "^0.3.0",
-    "postcss": "^8.4.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@types/mockjs": "^1.0.6",
     "@types/react": "^18.2.11",
     "@types/react-dom": "^18.2.4",
     "@umijs/fabric": "^4.0.1",
+    "@umijs/lint": "^4.2.11",
     "@umijs/test": "^4.0.70",
-    "lint-staged": "^13.2.2",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.5.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "mockjs": "^1.1.0",
     "postcss-px-to-viewport": "^1.1.1",
-    "prettier": "^2.5.1",
+    "prettier": "^3.3.2",
+    "stylelint": "^14",
     "typescript": "^5.1.3",
     "yorkie": "^2.0.0"
-  }
+  },
+  "peerDependencies": {}
 }

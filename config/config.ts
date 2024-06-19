@@ -33,6 +33,10 @@ export default defineConfig({
       },
     ],
   ],
+  autoprefixer: {
+    // 配置 Autoprefixer 选项
+    overrideBrowserslist: ['> 1%', 'last 2 versions', 'not dead'],
+  },
   extraPostCSSPlugins: [
     require('postcss-px-to-viewport')({
       viewportWidth: 750,

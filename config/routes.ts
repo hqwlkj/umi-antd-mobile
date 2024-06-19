@@ -48,6 +48,7 @@ export default [
       },
       { path: '/detail', title: '详情页', component: '@/pages/details/index' },
       { path: '/login', component: '@/pages/login/index', layout: false },
+      { path: '/home', component: '@/pages/home/index', layout: false },
       { path: '/*', component: '@/pages/404' },
       { path: '/**/*', redirect: '/404' },
     ],

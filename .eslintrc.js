@@ -1,5 +1,5 @@
 module.exports = {
-  extends: [require.resolve('@umijs/fabric/dist/eslint')],
+  extends: require.resolve('@umijs/max/eslint'),
   plugins: ['react'],
   rules: {
     '@typescript-eslint/indent': 'off',
