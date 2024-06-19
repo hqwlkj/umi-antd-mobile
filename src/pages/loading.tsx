@@ -1,6 +1,6 @@
 import React from 'react';
-import '../app.less';
 import { SpinLoading } from 'antd-mobile';
+import '../app.less';
 
 /**
  * 如何禁用掉每次刷新路由时出现的 loading... 状态？
