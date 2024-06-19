@@ -1,4 +1,12 @@
 import React from 'react';
-export default ()=>{
-  return <div> 我是登录的页面</div>
-}
+import './index.less';
+import { Button } from 'antd-mobile';
+
+export default () => {
+  return (
+    <div className="login-page-wrap">
+      {' '}
+      我是登录的页面 <Button color="primary">Login</Button>
+    </div>
+  );
+};
