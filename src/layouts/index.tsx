@@ -1,17 +1,18 @@
 import { Outlet, useLocation, useOutletContext } from '@umijs/max';
 import { ConfigProvider } from 'antd-mobile';
-import type { BadgeProps } from 'antd-mobile/es/components/badge';
 import zhCN from 'antd-mobile/es/locales/zh-CN';
 import React, { useMemo, useState } from 'react';
-import routes from '../../config/routes';
-import './index.less';
+import routess from '../../config/routes';
 import TabBarLayout from './tab-bar';
+import { useAppData, useSelectedRoutes } from '@@/exports';
+import { TabBarItemProps } from 'antd-mobile/es/components/tab-bar';
+import './index.less';
 
 export interface TabBarItemValueProps {
-  homeBadge?: BadgeProps['content'];
-  todoBadge?: BadgeProps['content'];
-  messageBadge?: BadgeProps['content'];
-  meBadge?: BadgeProps['content'];
+  homeBadge?: TabBarItemProps['badge'];
+  todoBadge?: TabBarItemProps['badge'];
+  messageBadge?: TabBarItemProps['badge'];
+  meBadge?: TabBarItemProps['badge'];
 }
 
 export const TabBarContext = React.createContext<{
@@ -32,21 +33,24 @@ export default () => {
   >({});
   const { pathname } = useLocation();
   const props = useOutletContext();
+  const { clientRoutes } = useAppData();
+  const routes = useSelectedRoutes();
+  console.log('clientRoutes', clientRoutes);
+  console.log('routes', routes, routess);
 
   const getLayoutChildren = useMemo(() => {
-    if (pathname.includes('/tabBar/')) {
-      console.log('====== TabBarLayout ======');
+    if (pathname.startsWith('/tab-bar/')) {
+      console.log(
+        '====== TabBarLayout ======',
+        routess.filter((x) => x.path === '/' && x?.routes)[0].routes,
+      );
       return (
-        <TabBarLayout>
-          <Outlet
-            context={{
-              name: 'TabBar Layout',
-              component: '@/layouts/index',
-              routes:
-                routes?.find((x) => x.component === '@/layouts/index')
-                  ?.routes ?? [],
-            }}
-          />
+        <TabBarLayout
+          routes={
+            routess?.filter((x) => x.path === '/' && x?.routes)[0]?.routes ?? []
+          }
+        >
+          <Outlet />
         </TabBarLayout>
       );
     }

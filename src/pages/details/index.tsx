@@ -5,12 +5,13 @@ import { useContext } from 'react';
 
 export default () => {
   const todo = useContext(TabBarContext);
-  const back = () =>
+  const back = () => {
     Toast.show({
       content: '点击了返回区域',
       duration: 1000,
       afterClose: () => history.back(),
     });
+  };
 
   return (
     <div>
@@ -36,7 +37,7 @@ export default () => {
       <br />
       <div>
         <div className="">指定线条宽度</div>
-        <Space style={{ '--gap': '24px' }}>
+        <Space style={{ '--gap': '24px', width: '100%' }}>
           <ProgressCircle percent={75} style={{ '--track-width': '2px' }}>
             75%
           </ProgressCircle>

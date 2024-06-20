@@ -189,12 +189,12 @@ export default function IndexPage() {
       <div>
         <Space wrap>
           <Button
-            onClick={() =>
+            onClick={() => {
               Toast.show({
                 icon: 'success',
                 content: '保存成功',
-              })
-            }
+              });
+            }}
           >
             成功
           </Button>

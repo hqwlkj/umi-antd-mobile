@@ -8,42 +8,46 @@ import {
   UserOutline,
 } from 'antd-mobile-icons';
 import type { TabBarItemProps } from 'antd-mobile/es/components/tab-bar';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import styles from './index.less';
+import { TabBarContext } from '@/layouts';
 
-export default ({ children }: { children: React.ReactNode }) => {
+export default ({
+  children,
+  routes,
+}: {
+  children: React.ReactNode;
+  routes: any[];
+}) => {
   const [tabs, setTabs] = useState<TabBarItemProps[] | any[]>([]);
-  // const [activeKey, setActiveKey] = useState<string>('');
+  const [activeKey, setActiveKey] = useState<string>('');
   const { pathname } = useLocation();
+  const tabBarContext = useContext(TabBarContext);
   const props = useOutletContext();
-  console.log('proddddddddps', props);
 
-  // useEffect(() => {
-  //   const { pathname } = location;
-  //   console.log('========================');
-  //   if (props) {
-  //     const { routes, name } = props as any;
-  //     console.log('name', name);
-  //     const _tabs = (routes || [])
-  //       .filter((x: any) => !!x.icon)
-  //       .map((_route: any) => ({
-  //         key: (_route.path || '').replace('/', ''),
-  //         title: _route.title,
-  //         icon: _route.icon,
-  //         badge: _route.badgeKey,
-  //       }));
-  //     if (pathname) {
-  //       // setActiveKey(pathname.replace('/', ''));
-  //     } else {
-  //       // setActiveKey(_tabs[0].key);
-  //     }
-  //     console.log('tabs', tabs);
-  //     setTabs(_tabs);
-  //   }
-  // }, [props]);
   useEffect(() => {
-    console.log('weqqqqqqqqewqewqeqeqqqeqewqqqe');
-  }, []);
+    console.log('========================', routes);
+    if (routes) {
+      const _tabs = (routes || [])
+        .filter((x: any) => !!x.icon)
+        .map((_route: any) => {
+          console.log('route', _route);
+          return {
+            key: (_route.path || '').replace('/', ''),
+            tabIndex: (_route.path || '').replace('/', ''),
+            title: _route.title,
+            icon: _route.icon,
+            badge: _route.badgeKey,
+          };
+        });
+      if (pathname) {
+        setActiveKey(pathname.replace('/', ''));
+      } else {
+        setActiveKey(_tabs[0].key);
+      }
+      setTabs(_tabs);
+    }
+  }, [props, pathname]);
 
   const renderTabItemIcon = useCallback((name: string) => {
     switch (name) {
@@ -70,9 +74,9 @@ export default ({ children }: { children: React.ReactNode }) => {
         <div className={styles['view-warp']}>{children}</div>
       </div>
       <TabBar
-        // activeKey={activeKey}
+        activeKey={activeKey}
         onChange={(key) => {
-          // setActiveKey(key);
+          setActiveKey(key);
           history.replace('/' + key);
         }}
         safeArea
@@ -82,7 +86,7 @@ export default ({ children }: { children: React.ReactNode }) => {
             key={item.tabIndex}
             icon={renderTabItemIcon(item.icon as string)}
             title={item.title}
-            // badge={tabBarContext.items[item.badge as any] || null}
+            badge={tabBarContext?.items?.['homeBadge'] || null}
           />
         ))}
       </TabBar>
