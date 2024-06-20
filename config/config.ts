@@ -11,28 +11,18 @@ export default defineConfig({
   // dynamicImport: {
   //   loading: "@/pages/loading"
   // },
-  routes: [...routes],
+  routes: routes,
   // nodeModulesTransform: {
   //   type: "none"
   // },
-  // antdMobile: {
-  //   hd: true
-  // },
+  layout: false,
   alias: {
     // "antd-mobile": "antd-mobile/2x" //使用高清适配
   },
   // mfsu: { production: { output: ".mfsu-production" } },
   fastRefresh: true,
-  extraBabelPlugins: [
-    [
-      'import',
-      {
-        libraryName: 'antd-mobile',
-        libraryDirectory: 'es/components',
-        style: false,
-      },
-    ],
-  ],
+  clickToComponent: {},
+  extraBabelPlugins: [],
   autoprefixer: {
     overrideBrowserslist: [
       'Android 4.1',
@@ -44,10 +34,11 @@ export default defineConfig({
     ],
     grid: true,
   },
+  postcssLoader: {},
   extraPostCSSPlugins: [
     require('postcss-px-to-viewport')({
-      viewportWidth: 375, // 视口宽度，对应设计稿的宽度，一般是 375 或 750
-      viewportHeight: 667, // 视口高度，根据 750 设备的宽度来指定，一般指定 1334 也可以不配置
+      viewportWidth: 750, // 视口宽度，对应设计稿的宽度，一般是 375 或 750
+      viewportHeight: 1334, // 视口高度，根据 750 设备的宽度来指定，一般指定 1334 也可以不配置
       unitPrecision: 3, // 指定 `px` 转换为视口单位值的小数位数
       viewportUnit: 'vw', // 指定需要转换成的视口单位，建议使用 vw
       selectorBlackList: ['.ignore', '.hairlines'], // 指定不转换为视口单位的类，可以自定义，可以无限添加，建议定义一至两个通用的类名
@@ -63,6 +54,11 @@ export default defineConfig({
     {
       name: 'description',
       content: '基于umi@3.x + antd-mobile@next 快速构建h5及app应用',
+    },
+    {
+      name: 'viewport',
+      content:
+        'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no',
     },
   ],
   // https://mobile.ant.design/zh/guide/quick-start#%E5%85%BC%E5%AE%B9%E6%80%A7

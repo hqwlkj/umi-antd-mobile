@@ -15,8 +15,7 @@
     "prepare": "husky"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "fabric verify-commit"
+    "pre-commit": "lint-staged"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -33,15 +32,15 @@
     "@umijs/max": "^4.2.11",
     "antd-mobile": "^5.36.1",
     "antd-mobile-icons": "^0.3.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/mockjs": "^1.0.6",
-    "@types/react": "^18.2.11",
-    "@types/react-dom": "^18.2.4",
-    "@umijs/fabric": "^4.0.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@umijs/lint": "^4.2.11",
+    "@umijs/plugin-antd-mobile": "^1.2.0",
     "@umijs/test": "^4.0.70",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
