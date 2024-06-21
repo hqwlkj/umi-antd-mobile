@@ -17,7 +17,7 @@
 
   :global {
     .adm-nav-bar {
-      background: #1890ff;
+      background: var(--adm-color-primary, #1677ff);
     }
 
     .adm-list-card {
@@ -27,20 +27,18 @@
 
   .leftTitle {
     font-size: 32px;
-    color: #ffffff;
+    color: #fff;
   }
 
-  :global {
-    .adm-pull-to-refresh-head {
-      background: #1890ff;
-      color: #a2d0fa;
-      font-size: 20px;
-      text-align: center;
+  .adm-pull-to-refresh-head {
+    background: var(--adm-color-primary, #1677ff);
+    color: #a2d0fa;
+    font-size: 20px;
+    text-align: center;
 
-      .adm-dot-loading {
-        font-size: 38px;
-        color: #a2d0fa;
-      }
+    .adm-dot-loading {
+      font-size: 38px;
+      color: #a2d0fa;
     }
   }
 
@@ -55,12 +53,16 @@
   }
 
   .headerWarp {
-    background: #1890ff;
-    --adm-border-color: #1890ff;
+    background: var(--adm-color-primary, #1677ff);
+
+    --adm-color-background: var(--adm-color-primary, #1677ff);
+    --adm-border-color: var(--adm-color-primary, #1677ff);
 
     :global {
       .adm-list-body {
-        background: #1890ff;
+        border-color: var(--adm-color-primary, #1677ff);
+        background: var(--adm-color-primary, #1677ff);
+
         --size: var(--adm-avatar-size, 80px);
 
         .adm-avatar {
@@ -74,11 +76,11 @@
         }
 
         .adm-list-item-content-arrow {
-          color: #ffffff;
+          color: #fff;
         }
 
         .adm-list-item-content-main {
-          color: #ffffff;
+          color: #fff;
 
           .adm-list-item-description {
             color: #a2d0fa;
@@ -89,7 +91,7 @@
   }
 
   .listGroupWarp {
-    background: #ffffff;
+    background: #fff;
     margin: 15px 25px;
     border-radius: 20px;
     overflow: hidden;
@@ -106,7 +108,7 @@
       }
 
       .icon-3 {
-        color: #ff4400;
+        color: #f40;
         font-size: 34px;
       }
 
