@@ -154,6 +154,8 @@ $ serve ./dist
 
 <img src="https://user-images.githubusercontent.com/12181423/150905972-d8bd4608-d86b-4bcc-98bc-ca42e2f91146.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/151107456-cf3ca33f-f2ee-4fb4-9f04-1426b729dba7.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/151107542-24f5c943-2af2-4e20-91ef-fb18d9aadbf7.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569860-2f288815-75b8-4cd9-abae-ee90f310826f.png" width="200" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/12181423/150569985-360f6b7e-0805-49e0-89fa-724307140bb5.png" width="200" />
 
+https://github.com/hqwlkj/umi-antd-mobile/assets/12181423/e7fc06ba-f835-4f7c-a412-a7e0b9664095
+
 目前还是一个测试demo，所以图片就是一个截屏图，大家先将就看看 😂😂😂
 
 ## 内置 Layout
