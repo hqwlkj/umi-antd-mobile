@@ -1,5 +1,5 @@
-import { history, useLocation, useOutletContext } from '@umijs/max';
-import { TabBar } from 'antd-mobile';
+import { history, Outlet, useLocation, useOutletContext } from '@umijs/max';
+import { TabBar } from 'antd-mobile/2x';
 import {
   AlipayCircleFill,
   AppOutline,
@@ -9,16 +9,10 @@ import {
 } from 'antd-mobile-icons';
 import type { TabBarItemProps } from 'antd-mobile/es/components/tab-bar';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import styles from './index.less';
 import { TabBarContext } from '@/layouts';
+import styles from './index.less';
 
-export default ({
-  children,
-  routes,
-}: {
-  children: React.ReactNode;
-  routes: any[];
-}) => {
+export default ({ routes }: { routes: any[] }) => {
   const [tabs, setTabs] = useState<TabBarItemProps[] | any[]>([]);
   const [activeKey, setActiveKey] = useState<string>('');
   const { pathname } = useLocation();
@@ -26,18 +20,20 @@ export default ({
   const props = useOutletContext();
 
   useEffect(() => {
-    console.log('========================', routes);
     if (routes) {
       const _tabs = (routes || [])
         .filter((x: any) => !!x.icon)
         .map((_route: any) => {
-          console.log('route', _route);
+          const badgeKey = _route.badgeKey;
+          // @ts-ignore
+          const badge =
+            tabBarContext?.items?.[badgeKey as string] || _route.badge;
           return {
             key: (_route.path || '').replace('/', ''),
             tabIndex: (_route.path || '').replace('/', ''),
             title: _route.title,
             icon: _route.icon,
-            badge: _route.badgeKey,
+            badge: badge,
           };
         });
       if (pathname) {
@@ -47,7 +43,7 @@ export default ({
       }
       setTabs(_tabs);
     }
-  }, [props, pathname]);
+  }, [props, pathname, tabBarContext?.items]);
 
   const renderTabItemIcon = useCallback((name: string) => {
     switch (name) {
@@ -71,7 +67,9 @@ export default ({
   return (
     <div className={styles['tab-bar-layout']}>
       <div className={styles['container-warp']}>
-        <div className={styles['view-warp']}>{children}</div>
+        <div className={styles['view-warp']}>
+          <Outlet />
+        </div>
       </div>
       <TabBar
         activeKey={activeKey}
@@ -83,10 +81,11 @@ export default ({
       >
         {tabs.map((item: TabBarItemProps) => (
           <TabBar.Item
+            data-key={item.tabIndex}
             key={item.tabIndex}
             icon={renderTabItemIcon(item.icon as string)}
             title={item.title}
-            badge={tabBarContext?.items?.['homeBadge'] || null}
+            badge={item.badge}
           />
         ))}
       </TabBar>
