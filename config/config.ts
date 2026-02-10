@@ -16,6 +16,7 @@ export default defineConfig({
   //   type: "none"
   // },
   layout: false,
+  request: {},
   alias: {
     // "antd-mobile": "antd-mobile/2x" //使用高清适配
   },
